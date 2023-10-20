@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App - Ariel Guerrero</title>
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/toastr.min.css">
+
+    <!-- Icono Web -->
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+
+    <!-- Fuente Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Archivos Javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/toastr.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <h2>To-Do List <img src="img/icon.png" alt=""></h2>
+            <p id="fecha"></p>
+
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Qué tienes pendiente??">
+                <button onclick="addTask()" id="add">Add</button>
+            </div>
+            <div id="title-bar" class="title-bar">
+                <button type="button" class="today active" id="today">Today</button>
+                <button type="button" class="complete" id="complete">Completed</button>
+            </div>
+            <ul id="list-container"></ul>
+            <ul id="list-completed" class="hidden"></ul>
+        </div>
+    </div>
+
+    <!-- Librerías -->
+    <script src="js/todoList.js"></script>
+    <script src="js/fecha.js"></script>
+    <script>
+        $("#input-box").on("keydown", function () {
+            if (event.keyCode === 13) {
+                $("#add").click();
+            }
+        });
+    </script>
+</body>
+
+</html>
